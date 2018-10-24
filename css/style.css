@@ -75,21 +75,22 @@ body {
   font-weight: 700;
 }
 
-.reset {
-  margin-top: 1.25rem;
-  text-align: right;
+.complementary,
+.triadic {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  font-size: calc(1.5rem + 0.2vw);
+  line-height: 50vh;
+  text-align: center;
+  color: #000;
 }
 
-.reset .btn {
-  -webkit-appearance: none;
-  padding: .3125rem 1.25rem;
-  background: rgba(255, 255, 255, 0.75);
-  border: none;
-  text-transform: uppercase;
-  cursor: pointer;
+.triadic {
+  top: 50vh;
 }
 
-.reset .btn:hover {
-  background: white;
+#opacitySelector {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

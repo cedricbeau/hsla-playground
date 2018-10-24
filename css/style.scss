@@ -64,20 +64,22 @@ body {
   }
 }
 
-.reset {
-  margin-top: 1.25rem;
-  text-align: right;
+.complementary,
+.triadic {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  font-size: calc(1.5rem + 0.2vw);
+  line-height: 50vh;
+  text-align: center;
+  color: #000;
+}
 
-  .btn {
-    -webkit-appearance: none;
-    padding: .3125rem 1.25rem;
-    background: rgba(255, 255, 255, .75);
-    border: none;
-    text-transform: uppercase;
-    cursor: pointer;
+.triadic {
+  top: 50vh;
+}
 
-    &:hover {
-      background: rgba(255, 255, 255, 1);
-    }
-  }
+// Opacity container
+#opacitySelector {
+  display: none;
 }
