@@ -19,12 +19,12 @@ body {
   color: #fff;
 }
 
-.resultat {
+[class^="resultat_"] {
   padding: 1rem;
   background: rgba(00, 00, 00, .15);
   border-radius: 2px;
   box-shadow: inset 0px 0px 2px rgba(00, 00, 00, .15);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   text-align: center;
 }
 
@@ -67,12 +67,14 @@ body {
 .complementary,
 .triadic {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50vw;
   height: 50vh;
-  font-size: calc(1.5rem + 0.2vw);
-  line-height: 50vh;
+  font-size: 1.25erm;
   text-align: center;
-  color: #000;
+  color: #fff;
 }
 
 .triadic {

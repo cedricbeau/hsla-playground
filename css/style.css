@@ -20,13 +20,13 @@ body {
   color: #fff;
 }
 
-.resultat {
+[class^="resultat_"] {
   padding: 1rem;
   background: rgba(0, 0, 0, 0.15);
   border-radius: 2px;
   -webkit-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.15);
           box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.15);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   text-align: center;
 }
 
@@ -78,12 +78,20 @@ body {
 .complementary,
 .triadic {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50vw;
   height: 50vh;
-  font-size: calc(1.5rem + 0.2vw);
-  line-height: 50vh;
+  font-size: 1.25erm;
   text-align: center;
-  color: #000;
+  color: #fff;
 }
 
 .triadic {

@@ -20,17 +20,17 @@
     <div class="selector">
       <span class="selector_label">Hue:</span>
       <span class="selector_value"></span>
-      <input type="range" class="selector_range" value="210" min="0" max="360" step="1" oninput="showValue(this.value)">
+      <input type="range" class="selector_range" value="210" min="0" max="360" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
     </div>
     <div class="selector">
       <span class="selector_label">Saturation:</span>
       <span class="selector_value"></span>
-      <input type="range" class="selector_range" value="100" min="0" max="100" step="1" oninput="showValue(this.value)">
+      <input type="range" class="selector_range" value="100" min="0" max="100" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
     </div>
     <div class="selector">
       <span class="selector_label">Lightness:</span>
       <span class="selector_value"></span>
-      <input type="range" class="selector_range" value="50" min="0" max="100" step="1" oninput="showValue(this.value)">
+      <input type="range" class="selector_range" value="50" min="0" max="100" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
     </div>
     <div class="selector">
       <input type="checkbox" name="opacity" id="checkOpacity" onclick="checkOpacity()">
@@ -39,9 +39,9 @@
     <div id="opacitySelector" class="selector">
       <span class="selector_label">Alpha:</span>
       <span class="selector_value"></span>
-      <input type="range" class="selector_range" value="1" min="0" max="1" step="0.01" oninput="showValue(this.value)">
+      <input type="range" class="selector_range" value="1" min="0" max="1" step="0.01" oninput="showValue(this.value)" onchange="showValue(this.value)">
     </div>
-    <div class="resultat"></div>
+    <div class="primary"></div>
   </div>
 
   <script src="js/index.js"></script>
