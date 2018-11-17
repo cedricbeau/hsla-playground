@@ -12,3 +12,13 @@ Outil en ligne pour générer une couleur HSLA
 * Suppression du reset
 * Ajout de la couleur complementaire
 * Ajout de la couleur ternaire
+
+**Mise à jour 17/11/2018**
+
+* Modification du layout de la page
+* modification du rendu pour chaque résultat - remplacement de hsl(valeur, valeur, valeur) par:
+
+|| couleur ||
+| :----: | :----: | :----: |
+| valeur | valeur | valeur |
+| def |def | def |

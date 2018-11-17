@@ -17,31 +17,29 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #fff;
-}
-
-[class^="resultat_"] {
-  padding: 1rem;
-  background: rgba(00, 00, 00, .15);
-  border-radius: 2px;
-  box-shadow: inset 0px 0px 2px rgba(00, 00, 00, .15);
-  font-size: 1.125rem;
-  text-align: center;
+  background: #f2f2f2;
 }
 
 .selectors {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  width: 20rem;
-  padding: 1rem;
-  background-color: rgba(00, 00, 00, 0.5);
+  padding: 1rem 0;
+  background-color: #333;
+
+  &_inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .selector {
-  display: flex;
-  flex-wrap: wrap;
-  margin: .625rem 0;
+  flex: 1 0 33.3333%;
+  min-width: 20rem;
+  padding: 0 1rem;
+
+  &_inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .625rem 0;
+  }
 
   &[class^="selector_"] {
     flex: 0 0 auto;
@@ -64,21 +62,47 @@ body {
   }
 }
 
-.complementary,
-.triadic {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50vw;
-  height: 50vh;
-  font-size: 1.25erm;
-  text-align: center;
-  color: #fff;
+.opacity {
+  flex: 1 0 100%;
+  max-width: 100%;
+
+  .selector_inner {
+    min-width: 20rem;
+  }
 }
 
-.triadic {
-  top: 50vh;
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.result {
+  flex: 1 0 33.3333%;
+  min-width: 20rem;
+  padding: 5rem .625rem;
+}
+
+[class^="result_"] {
+  color: #fff;
+  text-align: center;
+}
+
+.color_result {
+  display: flex;
+  justify-content: center;
+
+  &_item {
+    padding: .3125rem;
+  }
+
+  &_def {
+    padding: .3125rem;
+    margin-top: .3125rem;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: .2rem;
+    font-size: .75rem;
+    text-transform: uppercase;
+  }
 }
 
 // Opacity container

@@ -13,35 +13,49 @@
 
 <body>
 
-  <div class="complementary"></div>
-  <div class="triadic"></div>
-
   <div class="selectors">
-    <div class="selector">
-      <span class="selector_label">Hue:</span>
-      <span class="selector_value"></span>
-      <input type="range" class="selector_range" value="210" min="0" max="360" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
+    <div class="selectors_inner">
+      <div class="selector">
+        <div class="selector_inner">
+          <span class="selector_label">Hue:</span>
+          <span class="selector_value"></span>
+          <input type="range" class="selector_range" value="210" min="0" max="360" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
+        </div>
+      </div>
+      <div class="selector">
+        <div class="selector_inner">
+          <span class="selector_label">Saturation:</span>
+          <span class="selector_value"></span>
+          <input type="range" class="selector_range" value="100" min="0" max="100" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
+        </div>
+      </div>
+      <div class="selector">
+        <div class="selector_inner">
+          <span class="selector_label">Lightness:</span>
+          <span class="selector_value"></span>
+          <input type="range" class="selector_range" value="50" min="0" max="100" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
+        </div>
+      </div>
+      <div class="selector opacity">
+        <div class="selector_inner">
+          <input type="checkbox" name="opacity" id="checkOpacity" onclick="checkOpacity()">
+          <label for="checkOpacity">Opacité</label>
+        </div>
+      </div>
+      <div id="opacitySelector" class="selector opacity">
+        <div class="selector_inner">
+          <span class="selector_label">Alpha:</span>
+          <span class="selector_value"></span>
+          <input type="range" class="selector_range" value="1" min="0" max="1" step="0.01" oninput="showValue(this.value)" onchange="showValue(this.value)">
+        </div>
+      </div>
     </div>
-    <div class="selector">
-      <span class="selector_label">Saturation:</span>
-      <span class="selector_value"></span>
-      <input type="range" class="selector_range" value="100" min="0" max="100" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
-    </div>
-    <div class="selector">
-      <span class="selector_label">Lightness:</span>
-      <span class="selector_value"></span>
-      <input type="range" class="selector_range" value="50" min="0" max="100" step="1" oninput="showValue(this.value)" onchange="showValue(this.value)">
-    </div>
-    <div class="selector">
-      <input type="checkbox" name="opacity" id="checkOpacity" onclick="checkOpacity()">
-      <label for="checkOpacity">Opacité</label>
-    </div>
-    <div id="opacitySelector" class="selector">
-      <span class="selector_label">Alpha:</span>
-      <span class="selector_value"></span>
-      <input type="range" class="selector_range" value="1" min="0" max="1" step="0.01" oninput="showValue(this.value)" onchange="showValue(this.value)">
-    </div>
-    <div class="primary"></div>
+  </div>
+
+  <div class="colors">
+    <div class="result primary"></div>
+    <div class="result complementary"></div>
+    <div class="result triadic"></div>
   </div>
 
   <script src="js/index.js"></script>
