@@ -22,7 +22,7 @@ body {
 }
 
 .selectors {
-  padding: 1rem 0;
+  padding: .3125rem;
   background-color: #333;
 }
 
@@ -36,10 +36,12 @@ body {
 
 .selector {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 33.3333%;
-          flex: 1 0 33.3333%;
-  min-width: 20rem;
-  padding: 0 1rem;
+      -ms-flex: 1 0 20rem;
+          flex: 1 0 20rem;
+  padding: 1rem;
+  margin: .3125rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
 }
 
 .selector_inner {
@@ -48,7 +50,6 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: .625rem 0;
 }
 
 .selector[class^="selector_"] {
@@ -77,17 +78,6 @@ body {
   font-weight: 700;
 }
 
-.opacity {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 100%;
-          flex: 1 0 100%;
-  max-width: 100%;
-}
-
-.opacity .selector_inner {
-  min-width: 20rem;
-}
-
 .colors {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,7 +91,7 @@ body {
       -ms-flex: 1 0 33.3333%;
           flex: 1 0 33.3333%;
   min-width: 20rem;
-  padding: 5rem .625rem;
+  padding: 1.25rem .625rem;
 }
 
 [class^="result_"] {
@@ -131,7 +121,18 @@ body {
   text-transform: uppercase;
 }
 
+.opacity .selector_inner {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 20rem;
+}
+
 #opacitySelector {
   display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: .625rem;
 }
 /*# sourceMappingURL=style.css.map */
