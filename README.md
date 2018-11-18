@@ -25,11 +25,11 @@ Outil en ligne pour générer une couleur HSLA
 
 **avant**
 
-![alt text](https://cedricbeau.github.io/hsla-selector/img/hsla-v1.jpg "Avant")
+![img/hsla-v1.jpg](img/hsla-v1.jpg "Avant")
 
 **après**
 
-![alt text](https://cedricbeau.github.io/hsla-selector/img/hsla-v2.jpg "Après")
+![img/hsla-v2.jpg](img/hsla-v2.jpg "Après")
 
 **Mise à jour 18/11/2018**
 
