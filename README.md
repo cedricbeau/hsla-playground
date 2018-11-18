@@ -23,8 +23,17 @@ Outil en ligne pour générer une couleur HSLA
 | valeur | valeur | valeur |
 | def |def | def |
 
+**avant**
+
+![alt text](https://cedricbeau.github.io/hsla-selector/img/hsla-v1.jpg "Avant")
+
+**après**
+
+![alt text](https://cedricbeau.github.io/hsla-selector/img/hsla-v2.jpg "Après")
+
 **Mise à jour 18/11/2018**
 
 * Modification de la structure du selecteur d'opacité
 * Diminution de l'opacité du background des des selecteurs
 * Diminution du padding des résultats
+* Ajout des screens **avant** et **arpès** modification du layout de la page
