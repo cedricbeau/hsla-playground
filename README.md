@@ -22,3 +22,9 @@ Outil en ligne pour générer une couleur HSLA
 | :----: | :----: | :----: |
 | valeur | valeur | valeur |
 | def |def | def |
+
+**Mise à jour 18/11/2018**
+
+* Modification de la structure du selecteur d'opacité
+* Diminution de l'opacité du background des des selecteurs
+* Diminution du padding des résultats
