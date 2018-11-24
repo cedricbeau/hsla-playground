@@ -37,3 +37,8 @@ Outil en ligne pour générer une couleur HSLA
 * Diminution de l'opacité du background des des selecteurs
 * Diminution du padding des résultats
 * Ajout des screens **avant** et **arpès** modification du layout de la page
+
+**Mise à jour 24/11/2018**
+
+* Ajout du favicon
+* HSLA Selector de vient HSLA Playground
