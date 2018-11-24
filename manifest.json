@@ -1,0 +1,22 @@
+{
+  "name" : "HSLA PLayground",
+  "short_name" : "HSLA PLayground",
+  "theme_color" : "#ffffff",
+  "background_color" : "#ffffff",
+  "display" : "standalone",
+  "start_url" : "https://cedricbeau.github.io/",
+  "lang" : "fr",
+  "description" : "Outil en ligne pour générer une couleur HSLA",
+  "orientation" : "portrait-primary",
+  "scope" : "https://cedricbeau.github.io/hsla-playground/",
+  "icons" : [
+      {
+          "src": "https://cedricbeau.github.io/favicon/android-chrome-192x192.png",
+          "sizes": "192x192"
+      },
+      {
+          "src": "https://cedricbeau.github.io/favicon/android-chrome-512x512.png",
+          "sizes": "512x512"
+      }
+  ]
+}

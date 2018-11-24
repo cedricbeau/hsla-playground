@@ -2,16 +2,18 @@
 
 Outil en ligne pour générer une couleur HSLA
 
-**Mise à jour 24/10/2018**
+**Mise à jour 24/11/2018**
 
-* Ajout de l'option Opacité
-* Ajout de onchange="" pour le support de IE11
+* Ajout du favicon
+* HSLA Selector de vient HSLA Playground
+* Passage de HSLA Playground en PWA
 
-**Mise à jour 22/10/2018**
+**Mise à jour 18/11/2018**
 
-* Suppression du reset
-* Ajout de la couleur complementaire
-* Ajout de la couleur ternaire
+* Modification de la structure du selecteur d'opacité
+* Diminution de l'opacité du background des des selecteurs
+* Diminution du padding des résultats
+* Ajout des screens **avant** et **arpès** modification du layout de la page
 
 **Mise à jour 17/11/2018**
 
@@ -31,14 +33,13 @@ Outil en ligne pour générer une couleur HSLA
 
 ![img/hsla-v2.jpg](img/hsla-v2.jpg "Après")
 
-**Mise à jour 18/11/2018**
+**Mise à jour 24/10/2018**
 
-* Modification de la structure du selecteur d'opacité
-* Diminution de l'opacité du background des des selecteurs
-* Diminution du padding des résultats
-* Ajout des screens **avant** et **arpès** modification du layout de la page
+* Ajout de l'option Opacité
+* Ajout de onchange="" pour le support de IE11
 
-**Mise à jour 24/11/2018**
+**Mise à jour 22/10/2018**
 
-* Ajout du favicon
-* HSLA Selector de vient HSLA Playground
+* Suppression du reset
+* Ajout de la couleur complementaire
+* Ajout de la couleur ternaire
