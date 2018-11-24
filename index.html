@@ -7,8 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="author" description="Cédric Beau">
   <meta name="description" content="Générateur HSLA en ligne">
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <title>HSLA Playground</title>
+
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -58,6 +67,22 @@
     <div class="result complementary"></div>
     <div class="result triadic"></div>
   </div>
+
+  <script>
+		//This is the "Offline page" service worker
+		if ('serviceWorker' in navigator) {
+		  navigator.serviceWorker.register('sw.js', { scope: './' }).then(function(reg) {
+		    // registration worked
+		    console.log('Registration succeeded. Scope is ' + reg.scope);
+		  }).catch(function(error) {
+		    // registration failed
+		    console.log('Registration failed with ' + error);
+		  });
+		};
+	</script>
+
+  <script src="sw.js" charset="utf-8"></script>
+  <script src="manup.js" charset="utf-8"></script>
 
   <script src="js/index.js"></script>
 
