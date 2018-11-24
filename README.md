@@ -1,4 +1,4 @@
-# hsla-selector
+# hsla-playground
 
 Outil en ligne pour générer une couleur HSLA
 
