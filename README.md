@@ -2,7 +2,7 @@
 
 Outil en ligne pour générer une couleur HSLA
 
-**Mise à jour 08/11/201/**
+**Mise à jour 08/11/2018**
 
 * Remplacement du favicon
 
