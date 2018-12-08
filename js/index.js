@@ -4,13 +4,15 @@
 
 function hslDef(value1, value2, value3, range1, range2, range3, primary, complementary, triadic) {
 
-  value1.innerText = range1;
-  value2.innerText = range2 + "%";
-  value3.innerText = range3 + "%";
-
   let H = parseInt(range1)
-  let complementaryH = H + 180 - 360
-  let triadicH = H + 120 - 360
+      S = parseInt(range2),
+      L = parseInt(range3),
+      complementaryH = H + 180 - 360,
+      triadicH = H + 120 - 360
+
+  value1.innerText = H;
+  value2.innerText = S + "%";
+  value3.innerText = L + "%";
 
   // calc complementary
   function calcComplementary() {
@@ -31,27 +33,27 @@ function hslDef(value1, value2, value3, range1, range2, range3, primary, complem
   }
 
   // set primary
-  primary.style.background = "hsl(" + range1 + ", " + range2 + "%, " + range3 + "%)";
+  primary.style.background = "hsl(" + H + ", " + S + "%, " + L + "%)";
   primary.innerHTML = "<div class='result_primary'>" +
   "<div class='color_title'><strong>Primary</strong></div>" +
     "<div class='color_result'>" +
       "<div class='color_result_item h'>" +
-        "<div class='color_result_value'>" + range1 + "</div> " +
+        "<div class='color_result_value'>" + H + "</div> " +
         "<div class='color_result_def'>H</div> " +
       "</div>" +
       "<div class='color_result_item s'>" +
-        "<div class='color_result_value'>" + range2 + "%</div> " +
+        "<div class='color_result_value'>" + S + "%</div> " +
         "<div class='color_result_def'>S</div> " +
       "</div>" +
       "<div class='color_result_item l'>" +
-        "<div class='color_result_value'>" + range3 + "%</div> " +
+        "<div class='color_result_value'>" + L + "%</div> " +
         "<div class='color_result_def'>L</div> " +
       "</div>" +
     "</div>" + 
   "</div>";
 
   // set complementary
-  complementary.style.background = "hsl(" + calcComplementary() + ", " + range2 + "%, " + range3 + "%)";
+  complementary.style.background = "hsl(" + calcComplementary() + ", " + S + "%, " + L + "%)";
   complementary.innerHTML = "<div class='result_complementary'>" +
   "<div class='color_title'><strong>Complementary</strong></div>" +
     "<div class='color_result'>" +
@@ -60,18 +62,18 @@ function hslDef(value1, value2, value3, range1, range2, range3, primary, complem
         "<div class='color_result_def'>H</div> " +
       "</div>" +
       "<div class='color_result_item s'>" +
-        "<div class='color_result_value'>" + range2 + "%</div> " +
+        "<div class='color_result_value'>" + S + "%</div> " +
         "<div class='color_result_def'>S</div> " +
       "</div>" +
       "<div class='color_result_item l'>" +
-        "<div class='color_result_value'>" + range3 + "%</div> " +
+        "<div class='color_result_value'>" + L + "%</div> " +
         "<div class='color_result_def'>L</div> " +
       "</div>" +
     "</div>" + 
   "</div>";
 
   // set triadic
-  triadic.style.background = "hsl(" + calcTriadic() + ", " + range2 + "%, " + range3 + "%)";
+  triadic.style.background = "hsl(" + calcTriadic() + ", " + S + "%, " + L + "%)";
   triadic.innerHTML = "<div class='result_complementary'>" +
   "<div class='color_title'><strong>Triadic</strong></div>" +
     "<div class='color_result'>" +
@@ -80,11 +82,11 @@ function hslDef(value1, value2, value3, range1, range2, range3, primary, complem
         "<div class='color_result_def'>H</div> " +
       "</div>" +
       "<div class='color_result_item s'>" +
-        "<div class='color_result_value'>" + range2 + "%</div> " +
+        "<div class='color_result_value'>" + S + "%</div> " +
         "<div class='color_result_def'>S</div> " +
       "</div>" +
       "<div class='color_result_item l'>" +
-        "<div class='color_result_value'>" + range3 + "%</div> " +
+        "<div class='color_result_value'>" + L + "%</div> " +
         "<div class='color_result_def'>L</div> " +
       "</div>" +
     "</div>" + 
@@ -107,14 +109,17 @@ function hslDefFunc() {
 
 let hslaDef = function (value1, value2, value3, value4, range1, range2, range3,range4, primary, complementary, triadic) {
 
-  value1.innerText = range1;
-  value2.innerText = range2 + "%";
-  value3.innerText = range3 + "%";
-  value4.innerText = range4;
-
   let H = parseInt(range1)
-  let complementaryH = H + 180 - 360
-  let triadicH = H + 120 - 360
+      S = parseInt(range2),
+      L = parseInt(range3),
+      A = range4,
+      complementaryH = H + 180 - 360,
+      triadicH = H + 120 - 360
+
+  value1.innerText = H;
+  value2.innerText = S + "%";
+  value3.innerText = L + "%";
+  value4.innerText = A;
 
   // calc complementary
   function calcComplementary() {
@@ -135,31 +140,31 @@ let hslaDef = function (value1, value2, value3, value4, range1, range2, range3,r
   }
 
   // set primary
-  primary.style.background = "hsla(" + range1 + ", " + range2 + "%, " + range3 + "%, " + range4 + ")";
+  primary.style.background = "hsla(" + H + ", " + S + "%, " + L + "%, " + A + ")";
   primary.innerHTML = "<div class='result_primary'>" +
   "<div class='color_title'><strong>Primary</strong></div>" +
     "<div class='color_result'>" +
       "<div class='color_result_item h'>" +
-        "<div class='color_result_value'>" + range1 + "</div> " +
+        "<div class='color_result_value'>" + H + "</div> " +
         "<div class='color_result_def'>H</div> " +
       "</div>" +
       "<div class='color_result_item s'>" + 
-        "<div class='color_result_value'>" + range2 + "%</div> " +
+        "<div class='color_result_value'>" + S + "%</div> " +
         "<div class='color_result_def'>S</div> " +
       "</div>" +
       "<div class='color_result_item l'>" +
-        "<div class='color_result_value'>" + range3 + "%</div> " +
+        "<div class='color_result_value'>" + L + "%</div> " +
         "<div class='color_result_def'>L</div> " +
       "</div>" +
       "<div class='color_result_item a'>" + 
-        "<div class='color_result_value'>" + range4 + "</div> " +
+        "<div class='color_result_value'>" + A + "</div> " +
         "<div class='color_result_def'>A</div> " +
       "</div>" +
     "</div>" + 
   "</div>";
 
   // set complementary
-  complementary.style.background = "hsla(" + calcComplementary() + ", " + range2 + "%, " + range3 + "%, " + range4 + ")";
+  complementary.style.background = "hsla(" + calcComplementary() + ", " + S + "%, " + L + "%, " + A + ")";
   complementary.innerHTML = "<div class='result_complementary'>" +
   "<div class='color_title'><strong>Complementary</strong></div>" +
     "<div class='color_result'>" +
@@ -168,22 +173,22 @@ let hslaDef = function (value1, value2, value3, value4, range1, range2, range3,r
         "<div class='color_result_def'>H</div> " +
       "</div>" +
       "<div class='color_result_item s'>" + 
-        "<div class='color_result_value'>" + range2 + "%</div> " +
+        "<div class='color_result_value'>" + S + "%</div> " +
         "<div class='color_result_def'>S</div> " +
       "</div>" +
       "<div class='color_result_item l'>" +
-        "<div class='color_result_value'>" + range3 + "%</div> " +
+        "<div class='color_result_value'>" + L + "%</div> " +
         "<div class='color_result_def'>L</div> " +
       "</div>" +
       "<div class='color_result_item a'>" +
-        "<div class='color_result_value'>" + range4 + "</div> " +
+        "<div class='color_result_value'>" + A + "</div> " +
         "<div class='color_result_def'>A</div> " +
       "</div>" +
     "</div>" + 
   "</div>";
 
   // set triadic
-  triadic.style.background = "hsla(" + calcTriadic() + ", " + range2 + "%, " + range3 + "%, " + range4 + ")";
+  triadic.style.background = "hsla(" + calcTriadic() + ", " + S + "%, " + L + "%, " + A + ")";
   triadic.innerHTML = "<div class='result_complementary'>" +
   "<div class='color_title'><strong>Triadic</strong></div>" +
     "<div class='color_result'>" +
@@ -192,15 +197,15 @@ let hslaDef = function (value1, value2, value3, value4, range1, range2, range3,r
         "<div class='color_result_def'>H</div> " +
       "</div>" +
       "<div class='color_result_item s'>" +
-        "<div class='color_result_value'>" + range2 + "%</div> " +
+        "<div class='color_result_value'>" + S + "%</div> " +
         "<div class='color_result_def'>S</div> " +
       "</div>" +
       "<div class='color_result_item l'>" +
-        "<div class='color_result_value'>" + range3 + "%</div> " +
+        "<div class='color_result_value'>" + L + "%</div> " +
         "<div class='color_result_def'>L</div> " +
       "</div>" +
       "<div class='color_result_item a'>" +
-        "<div class='color_result_value'>" + range4 + "</div> " +
+        "<div class='color_result_value'>" + A + "</div> " +
         "<div class='color_result_def'>A</div> " +
       "</div>" +
     "</div>" +
