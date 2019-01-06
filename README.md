@@ -2,6 +2,14 @@
 
 Outil en ligne pour générer une couleur HSLA
 
+**Mise à jour 06/01/2019**
+
+* Ajout de la capture d'ecran
+
+![img/hsla-playground.png](img/hsla-playground.png "Screenshot")
+
+* Remplacement du favicon
+
 **Mise à jour 24/11/2018**
 
 * Remplacement du favicon
