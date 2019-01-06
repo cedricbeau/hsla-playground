@@ -8,8 +8,6 @@ Outil en ligne pour générer une couleur HSLA
 
 ![img/hsla-playground.png](img/hsla-playground.png "Screenshot")
 
-* Remplacement du favicon
-
 **Mise à jour 24/11/2018**
 
 * Remplacement du favicon
