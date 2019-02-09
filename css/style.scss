@@ -8,22 +8,27 @@ html {
   font-size: 100%;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-  height: 100vh;
   overflow: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #fff;
-  background: #f2f2f2;
+  background: #333;
 }
 
 .selectors {
   padding: .3125rem;
-  background-color: #333;
-
+  
   &_inner {
     display: flex;
     flex-wrap: wrap;
@@ -64,6 +69,7 @@ body {
 }
 
 .colors {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
 }
@@ -109,3 +115,50 @@ body {
   flex-wrap: wrap;
   margin-top: .625rem;
 }
+
+/* ---------- Footer ---------- */
+
+$footer-color: #aaa;
+$footer-link-color-hover: #03A9F4;
+
+footer { 
+  padding: 2em 1.4em;
+  font-size:.875em;  
+  text-align: center;
+  color: $footer-color;
+
+  div + div {
+    margin-top: 1em;
+  }
+
+  a {
+    color: $footer-color;
+    text-decoration: none; 
+    -webkit-transition: color .4s;
+            transition: color .4s;
+    &:hover {
+      color: $footer-link-color-hover;
+    }
+  }
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    -webkit-transition: fill .4s;
+            transition: fill .4s;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    div + div {
+      margin-top: 0;
+    }
+  }
+}
+
