@@ -2,6 +2,14 @@
 
 Outil en ligne pour générer une couleur HSLA
 
+**Mise à jour 16/02/2019**
+
+* Ajout du footer
+* Ajout de la capture d'ecran
+
+![img/hsla-playground.png](img/hsla-v3.png "Screenshot")
+
+
 **Mise à jour 06/01/2019**
 
 * Ajout de la capture d'ecran
