@@ -2,6 +2,10 @@
 
 Outil en ligne pour générer une couleur HSLA
 
+## Demo
+
+[https://cedricbeau.github.io/hsla-playground/](https://cedricbeau.github.io/hsla-playground/)
+
 **Mise à jour 16/02/2019**
 
 * Ajout du footer
