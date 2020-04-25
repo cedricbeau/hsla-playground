@@ -1,0 +1,40 @@
+/* ---------- Footer ---------- */
+
+$footer-color: #aaa;
+$footer-link-color-hover: #03A9F4;
+
+footer {
+  padding: 1em;
+  font-size:.875em;
+  text-align: center;
+  color: $footer-color;
+
+  div + div {
+    margin-top: 1em;
+  }
+
+  a {
+    color: $footer-color;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+            transition: color .4s;
+    &:hover {
+      color: $footer-link-color-hover;
+    }
+  }
+
+  [class*="icon-"] {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    div + div {
+      margin-top: 0;
+    }
+  }
+}
