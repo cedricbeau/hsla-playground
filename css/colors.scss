@@ -37,16 +37,3 @@
     text-transform: uppercase;
   }
 }
-
-.opacity {
-  .selector_inner {
-    flex-direction: column;
-    max-width: 20rem;
-  }
-}
-
-#opacitySelector {
-  display: none;
-  flex-wrap: wrap;
-  margin-top: .625rem;
-}
