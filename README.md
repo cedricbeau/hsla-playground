@@ -6,6 +6,11 @@ Outil en ligne pour générer une couleur HSLA
 
 [https://cedricbeau.github.io/hsla-playground/](https://cedricbeau.github.io/hsla-playground/)
 
+**Mise à jour 25/04/2020**
+
+* Remplacement des svg par la font icon Icomoon
+* Refactorisation de l'architecture CSS
+
 **Mise à jour 16/02/2019**
 
 * Ajout du footer
