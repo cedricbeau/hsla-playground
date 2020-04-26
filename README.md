@@ -8,6 +8,14 @@ Outil en ligne pour générer une couleur HSLA
 
 **Mise à jour 25/04/2020**
 
+* Refactorisation du JS
+* Moification des styles des blocs slider
+* Modification de la capture d'écran
+
+![img/hsla-playground.png](img/hsla-v4.png "Screenshot")
+
+**Mise à jour 25/04/2020**
+
 * Remplacement des svg par la font icon Icomoon
 * Refactorisation de l'architecture CSS
 
