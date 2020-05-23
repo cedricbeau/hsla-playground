@@ -63,103 +63,86 @@ var hslaPlayground = {
 
   /**
    *
-   * @param {*} H
-   * @param {*} S
-   * @param {*} L
-   * @param {*} A
+   * @param {*} N = name
+   * @param {*} H = hue
+   * @param {*} S = saturation
+   * @param {*} L = lightness
+   * @param {*} A = alpha
    */
-  _displayPrimary: function(H, S, L, A) {
-    this.primary.style.background = "hsla(" + H + ", " + S + "%, " + L + "%, " + A + ")";
-    this.primary.innerHTML = "<div class='result_primary'>" +
-    "<div class='color_title'><strong>Primary</strong></div>" +
-      "<div class='color_result'>" +
-        "<div class='color_result_item h'>" +
-          "<div class='color_result_value'>" + H + "</div> " +
-          "<div class='color_result_def'>H</div> " +
+  _createDisplay: function(N, H, S, L, A) {
+
+    return "<div class='result_primary'>" +
+      "<div class='color_title'><strong>" + N + "</strong></div>" +
+        "<div class='color_result'>" +
+          "<div class='color_result_item h'>" +
+            "<div class='color_result_value'>" + H + "</div> " +
+            "<div class='color_result_def'>H</div> " +
+          "</div>" +
+          "<div class='color_result_item s'>" +
+            "<div class='color_result_value'>" + S + "%</div> " +
+            "<div class='color_result_def'>S</div> " +
+          "</div>" +
+          "<div class='color_result_item l'>" +
+            "<div class='color_result_value'>" + L + "%</div> " +
+            "<div class='color_result_def'>L</div> " +
+          "</div>" +
+          "<div class='color_result_item a'>" +
+            "<div class='color_result_value'>" + A + "</div> " +
+            "<div class='color_result_def'>A</div> " +
+          "</div>" +
         "</div>" +
-        "<div class='color_result_item s'>" +
-          "<div class='color_result_value'>" + S + "%</div> " +
-          "<div class='color_result_def'>S</div> " +
-        "</div>" +
-        "<div class='color_result_item l'>" +
-          "<div class='color_result_value'>" + L + "%</div> " +
-          "<div class='color_result_def'>L</div> " +
-        "</div>" +
-        "<div class='color_result_item a'>" +
-          "<div class='color_result_value'>" + A + "</div> " +
-          "<div class='color_result_def'>A</div> " +
-        "</div>" +
-      "</div>" +
-    "</div>";
+      "</div>"
   },
 
   /**
    *
-   * @param {*} H
-   * @param {*} S
-   * @param {*} L
-   * @param {*} A
+   * @param {*} H = hue
+   * @param {*} S = saturation
+   * @param {*} L = lightness
+   * @param {*} A = alpha
+   */
+  _createBackground: function(H, S, L, A) {
+    return "hsla(" + H + ", " + S + "%, " + L + "%, " + A + ")";
+  },
+
+  /**
+   *
+   * @param {*} H = hue
+   * @param {*} S = saturation
+   * @param {*} L = lightness
+   * @param {*} A = alpha
+   */
+  _displayPrimary: function(H, S, L, A) {
+    this.primary.style.background = this._createBackground(H, S, L, A);
+    this.primary.innerHTML = this._createDisplay('Primary', H, S, L, A);
+  },
+
+  /**
+   *
+   * @param {*} H = hue
+   * @param {*} S = saturation
+   * @param {*} L = lightness
+   * @param {*} A = alpha
    */
   _displayComplementary: function(H, S, L, A) {
     var H = H + 180 - 360;
 
-    this.complementary.style.background = "hsla(" + this._calcComplementary(H) + ", " + S + "%, " + L + "%, " + A + ")";
-    this.complementary.innerHTML = "<div class='result_complementary'>" +
-    "<div class='color_title'><strong>Complementary</strong></div>" +
-      "<div class='color_result'>" +
-        "<div class='color_result_item h'>" +
-          "<div class='color_result_value'>" + this._calcComplementary(H) + "</div> " +
-          "<div class='color_result_def'>H</div> " +
-        "</div>" +
-        "<div class='color_result_item s'>" +
-          "<div class='color_result_value'>" + S + "%</div> " +
-          "<div class='color_result_def'>S</div> " +
-        "</div>" +
-        "<div class='color_result_item l'>" +
-          "<div class='color_result_value'>" + L + "%</div> " +
-          "<div class='color_result_def'>L</div> " +
-        "</div>" +
-        "<div class='color_result_item a'>" +
-          "<div class='color_result_value'>" + A + "</div> " +
-          "<div class='color_result_def'>A</div> " +
-        "</div>" +
-      "</div>" +
-    "</div>";
+    this.complementary.style.background = this._createBackground(this._calcComplementary(H), S, L, A);
+    this.complementary.innerHTML = this._createDisplay('Complementary', this._calcComplementary(H), S, L, A);
   },
 
   /**
    *
-   * @param {*} H
-   * @param {*} S
-   * @param {*} L
-   * @param {*} A
+   * @param {*} H = hue
+   * @param {*} S = saturation
+   * @param {*} L = lightness
+   * @param {*} A = alpha
    */
   _displayTriadic: function(H, S, L, A) {
-
     var H = H + 120 - 360;
 
-    this.triadic.style.background = "hsla(" + this._calcTriadic(H) + ", " + S + "%, " + L + "%, " + A + ")";
-    this.triadic.innerHTML = "<div class='result_complementary'>" +
-    "<div class='color_title'><strong>Triadic</strong></div>" +
-      "<div class='color_result'>" +
-        "<div class='color_result_item h'>" +
-          "<div class='color_result_value'>" + this._calcTriadic(H) + "</div> " +
-          "<div class='color_result_def'>H</div> " +
-        "</div>" +
-        "<div class='color_result_item s'>" +
-          "<div class='color_result_value'>" + S + "%</div> " +
-          "<div class='color_result_def'>S</div> " +
-        "</div>" +
-        "<div class='color_result_item l'>" +
-          "<div class='color_result_value'>" + L + "%</div> " +
-          "<div class='color_result_def'>L</div> " +
-        "</div>" +
-        "<div class='color_result_item a'>" +
-          "<div class='color_result_value'>" + A + "</div> " +
-          "<div class='color_result_def'>A</div> " +
-        "</div>" +
-      "</div>" +
-    "</div>";
+    this.triadic.style.background = this._createBackground(this._calcTriadic(H), S, L, A);
+    this.triadic.innerHTML = this._createDisplay('Complementary', this._calcTriadic(H), S, L, A);
   },
 
   /**
