@@ -5,10 +5,6 @@
 var hslaPlayground = {
 
   ranges: document.querySelectorAll(".selector_range"),
-  values: document.querySelectorAll(".selector_value"),
-  primary: document.querySelector('.primary'),
-  complementary: document.querySelector('.complementary'),
-  triadic: document.querySelector('.triadic'),
 
   /**
    *
@@ -22,15 +18,17 @@ var hslaPlayground = {
    *
    */
   _displayHsla: function() {
-    var H = parseInt(this.ranges[0].value)
+
+    let H = parseInt(this.ranges[0].value)
         S = parseInt(this.ranges[1].value),
         L = parseInt(this.ranges[2].value),
-        A = this.ranges[3].value;
+        A = this.ranges[3].value,
+        values =  document.querySelectorAll(".selector_value");
 
-    this.values[0].innerText = H;
-    this.values[1].innerText = S + "%";
-    this.values[2].innerText = L + "%";
-    this.values[3].innerText = A;
+    values[0].innerText = H;
+    values[1].innerText = S + "%";
+    values[2].innerText = L + "%";
+    values[3].innerText = A;
 
     this._displayPrimary(H, S, L, A)
     this._displayComplementary(H, S, L, A)
@@ -113,8 +111,10 @@ var hslaPlayground = {
    * @param {*} A = alpha
    */
   _displayPrimary: function(H, S, L, A) {
-    this.primary.style.background = this._createBackground(H, S, L, A);
-    this.primary.innerHTML = this._createDisplay('Primary', H, S, L, A);
+    let primary = document.querySelector('.primary');
+
+    primary.style.background = this._createBackground(H, S, L, A);
+    primary.innerHTML = this._createDisplay('Primary', H, S, L, A);
   },
 
   /**
@@ -125,10 +125,11 @@ var hslaPlayground = {
    * @param {*} A = alpha
    */
   _displayComplementary: function(H, S, L, A) {
-    var H = H + 180 - 360;
+    H = H + 180 - 360;
+    let complementary = document.querySelector('.complementary');
 
-    this.complementary.style.background = this._createBackground(this._calcComplementary(H), S, L, A);
-    this.complementary.innerHTML = this._createDisplay('Complementary', this._calcComplementary(H), S, L, A);
+    complementary.style.background = this._createBackground(this._calcComplementary(H), S, L, A);
+    complementary.innerHTML = this._createDisplay('Complementary', this._calcComplementary(H), S, L, A);
   },
 
   /**
@@ -139,10 +140,11 @@ var hslaPlayground = {
    * @param {*} A = alpha
    */
   _displayTriadic: function(H, S, L, A) {
-    var H = H + 120 - 360;
+    H = H + 120 - 360;
+    let triadic = document.querySelector('.triadic');
 
-    this.triadic.style.background = this._createBackground(this._calcTriadic(H), S, L, A);
-    this.triadic.innerHTML = this._createDisplay('Complementary', this._calcTriadic(H), S, L, A);
+    triadic.style.background = this._createBackground(this._calcTriadic(H), S, L, A);
+    triadic.innerHTML = this._createDisplay('Complementary', this._calcTriadic(H), S, L, A);
   },
 
   /**
