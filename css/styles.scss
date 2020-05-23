@@ -1,6 +1,13 @@
+// Mixin IE
+@mixin target-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -56,13 +63,31 @@ html {
 body {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #fff;
   background: #333;
+}
+
+.app__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &.is-ie {
+    display: none;
+  }
+
+  @include target-ie {
+
+    &.is-ie {
+      display: flex;
+    }
+
+    &.is-not-ie {
+      display: none;
+    }
+  }
 }
 
 .selectors {
