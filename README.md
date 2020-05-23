@@ -6,6 +6,10 @@ Outil en ligne pour générer une couleur HSLA
 
 [https://cedricbeau.github.io/hsla-playground/](https://cedricbeau.github.io/hsla-playground/)
 
+**Mise à jour 23/05/2020**
+
+* Ajout de la detection de IE en CSS
+
 **Mise à jour 25/04/2020**
 
 * Refactorisation du JS
