@@ -18,10 +18,9 @@
   <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#603cba">
   <meta name="msapplication-TileColor" content="#603cba">
   <meta name="theme-color" content="#ffffff">
-
-  <script src="js/vue.min.js"></script>
   <link rel="manifest" href="manifest.json"></link>
 
+  <script src="js/vue.min.js"></script>
   <link rel="stylesheet" href="css/styles.min.css">
 </head>
 
@@ -36,50 +35,61 @@
     <div class="app__content is-not-ie">
       <div class="selectors">
         <div class="selectors_inner">
-          <div class="selector">
+          <div class="selector"
+               v-for="selector in selectors"
+               :key="selector.id">
             <div class="selector_inner">
-              <span class="selector_label">Hue:</span>
-              <span class="selector_value"></span>
-              <input type="range" class="selector_range" value="210" min="0" max="360" step="1">
+              <span class="selector_label">{{selector.name}}</span>
+              <span class="selector_value">{{selector.defaultValue}}</span>
+              <input type="range"
+                     class="selector_range"
+                     :value="selector.defaultValue"
+                     :min="selector.valueMin"
+                     :max="selector.valueMax"
+                     :step="selector.step"
+                     @input="_displayHsla">
             </div>
           </div>
-          <div class="selector">
-            <div class="selector_inner">
-              <span class="selector_label">Saturation:</span>
-              <span class="selector_value"></span>
-              <input type="range" class="selector_range" value="100" min="0" max="100" step="1">
-            </div>
-          </div>
-          <div class="selector">
-            <div class="selector_inner">
-              <span class="selector_label">Lightness:</span>
-              <span class="selector_value"></span>
-              <input type="range" class="selector_range" value="50" min="0" max="100" step="1">
-            </div>
-          </div>
-          <div class="selector opacity">
-            <div class="selector_inner">
-              <span class="selector_label">Alpha:</span>
-              <span class="selector_value"></span>
-              <input type="range" class="selector_range" value="1" min="0" max="1" step="0.01">
-            </div>
-          </div>
-         </div>
+        </div>
       </div>
       <link rel="stylesheet" href="css/result.min.css">
       <div class="colors">
-        <div class="result primary"></div>
-        <div class="result complementary"></div>
-        <div class="result triadic"></div>
+        <div class="result"
+             v-for="value in defaultValues"
+             :class="value.name"
+             :key="value.id"
+             :style="{backgroundColor: value.defaultBackground}">
+          <div class='result_content'>
+            <div class='color_title'><strong>{{value.name}}</strong></div>
+            <div class='color_result'>
+              <div class='color_result_item'>
+                <div class='color_result_value'>{{value.H}}</div>
+                <div class='color_result_def'>H</div>
+              </div>
+              <div class='color_result_item'>
+                <div class='color_result_value'>{{value.S}}</div>
+                <div class='color_result_def'>S</div>
+              </div>
+              <div class='color_result_item'>
+                <div class='color_result_value'>{{value.L}}</div>
+                <div class='color_result_def'>L</div>
+              </div>
+              <div class='color_result_item'>
+                <div class='color_result_value'>{{value.A}}</div>
+                <div class='color_result_def'>A</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <link rel="stylesheet" href="css/foot.min.css">
       <footer class="container">
         <div span="me">
           <script type="text/javascript">document.write(new Date().getFullYear());</script>
-          - <span class="icon-embed2"></span> avec <span class="icon-heart"></span> par <a href="https://cedricbeau.pro/" title="cedricbeau.pro">Cédric Beau</a>
+          - <span class="icon-embed2"></span> avec <span class="icon-heart"></span> par <a :href="links.siteUrl" :title="links.siteTitle">Cédric Beau</a>
         </div>
         <div class="github">
-          <a href="https://github.com/cedricbeau/hsla-playground"><span class="icon-github"></span></a>
+          <a :href="links.repoUrl" :title="links.repoTitle"><span class="icon-github"></span></a>
         </div>
       </footer>
     </div>
@@ -101,6 +111,6 @@
   <script src="sw.js" charset="utf-8"></script>
   <script src="manup.js" charset="utf-8"></script>
 
-  <script src="js/index.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
