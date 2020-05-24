@@ -33,16 +33,17 @@
       </header>
     </div>
     <div class="app__content is-not-ie">
+      <link rel="stylesheet" href="css/selectors.min.css">
       <div class="selectors">
-        <div class="selectors_inner">
+        <div class="selectors__inner">
           <div class="selector"
                v-for="selector in selectors"
                :key="selector.id">
-            <div class="selector_inner">
-              <span class="selector_label">{{selector.name}}</span>
-              <span class="selector_value">{{selector.defaultValue}}</span>
+            <div class="selector__content">
+              <span class="selector__label">{{selector.name}}</span>
+              <span class="selector__value">{{selector.defaultValue}}</span>
               <input type="range"
-                     class="selector_range"
+                     class="selector__range"
                      :value="selector.defaultValue"
                      :min="selector.valueMin"
                      :max="selector.valueMax"
@@ -53,30 +54,30 @@
         </div>
       </div>
       <link rel="stylesheet" href="css/result.min.css">
-      <div class="colors">
-        <div class="result"
+      <div class="result">
+        <div class="color"
              v-for="value in defaultValues"
              :class="value.name"
              :key="value.id"
              :style="{backgroundColor: value.defaultBackground}">
-          <div class='result_content'>
-            <div class='color_title'><strong>{{value.name}}</strong></div>
-            <div class='color_result'>
-              <div class='color_result_item'>
-                <div class='color_result_value'>{{value.H}}</div>
-                <div class='color_result_def'>H</div>
+          <div class='color__content'>
+            <div class='color__name'><strong>{{value.name}}</strong></div>
+            <div class='color__details'>
+              <div class='details__content'>
+                <div class='details__value'>{{value.H}}</div>
+                <div class='details__label'>H</div>
               </div>
-              <div class='color_result_item'>
-                <div class='color_result_value'>{{value.S}}</div>
-                <div class='color_result_def'>S</div>
+              <div class='details__content'>
+                <div class='details__value'>{{value.S}}</div>
+                <div class='details__label'>S</div>
               </div>
-              <div class='color_result_item'>
-                <div class='color_result_value'>{{value.L}}</div>
-                <div class='color_result_def'>L</div>
+              <div class='details__content'>
+                <div class='details__value'>{{value.L}}</div>
+                <div class='details__label'>L</div>
               </div>
-              <div class='color_result_item'>
-                <div class='color_result_value'>{{value.A}}</div>
-                <div class='color_result_def'>A</div>
+              <div class='details__content'>
+                <div class='details__value'>{{value.A}}</div>
+                <div class='details__label'>A</div>
               </div>
             </div>
           </div>

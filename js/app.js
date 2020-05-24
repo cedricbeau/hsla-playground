@@ -81,12 +81,12 @@ var app = new Vue({
 
     _displayHsla: function() {
 
-      let ranges = document.querySelectorAll(".selector_range"),
+      let ranges = document.querySelectorAll(".selector__range"),
           H = parseInt(ranges[0].value)
           S = parseInt(ranges[1].value),
           L = parseInt(ranges[2].value),
           A = ranges[3].value,
-          values =  document.querySelectorAll(".selector_value");
+          values =  document.querySelectorAll(".selector__value");
 
       values[0].innerText = H;
       values[1].innerText = S + "%";
@@ -132,24 +132,24 @@ var app = new Vue({
      */
     _updateColors: function(N, H, S, L, A) {
 
-      return "<div class='result_content'>" +
-        "<div class='color_title'><strong>" + N + "</strong></div>" +
-          "<div class='color_result'>" +
-            "<div class='color_result_item'>" +
-              "<div class='color_result_value'>" + H + "</div> " +
-              "<div class='color_result_def'>H</div> " +
+      return "<div class='color__content'>" +
+        "<div class='color__name'><strong>" + N + "</strong></div>" +
+          "<div class='color__details'>" +
+            "<div class='details__content'>" +
+              "<div class='details__value'>" + H + "</div> " +
+              "<div class='details__label'>H</div> " +
             "</div>" +
-            "<div class='color_result_item'>" +
-              "<div class='color_result_value'>" + S + "%</div> " +
-              "<div class='color_result_def'>S</div> " +
+            "<div class='details__content'>" +
+              "<div class='details__value'>" + S + "%</div> " +
+              "<div class='details__label'>S</div> " +
             "</div>" +
-            "<div class='color_result_item'>" +
-              "<div class='color_result_value'>" + L + "%</div> " +
-              "<div class='color_result_def'>L</div> " +
+            "<div class='details__content'>" +
+              "<div class='details__value'>" + L + "%</div> " +
+              "<div class='details__label'>L</div> " +
             "</div>" +
-            "<div class='color_result_item'>" +
-              "<div class='color_result_value'>" + A + "</div> " +
-              "<div class='color_result_def'>A</div> " +
+            "<div class='details__content'>" +
+              "<div class='details__value'>" + A + "</div> " +
+              "<div class='details__label'>A</div> " +
             "</div>" +
           "</div>" +
         "</div>"
