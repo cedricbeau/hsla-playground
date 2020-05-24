@@ -100,7 +100,7 @@ var app = new Vue({
 
     /**
      *
-     * @param {*} color
+     * @param {number} color
      */
     _calcComplementary: function(color) {
       if(color < 0) {
@@ -124,18 +124,14 @@ var app = new Vue({
 
     /**
      *
-     * @param {*} N = name
-     * @param {*} H = hue
-     * @param {*} S = saturation
-     * @param {*} L = lightness
-     * @param {*} A = alpha
+     * @param {number} H = hue
+     * @param {number} S = saturation
+     * @param {number} L = lightness
+     * @param {number} A = alpha
      */
-    _updateColors: function(N, H, S, L, A) {
+    _updateColors: function(H, S, L, A) {
 
-      return "<div class='color__content'>" +
-        "<div class='color__name'><strong>" + N + "</strong></div>" +
-          "<div class='color__details'>" +
-            "<div class='details__content'>" +
+      return "<div class='details__content'>" +
               "<div class='details__value'>" + H + "</div> " +
               "<div class='details__label'>H</div> " +
             "</div>" +
@@ -150,17 +146,15 @@ var app = new Vue({
             "<div class='details__content'>" +
               "<div class='details__value'>" + A + "</div> " +
               "<div class='details__label'>A</div> " +
-            "</div>" +
-          "</div>" +
-        "</div>"
+            "</div>"
     },
 
     /**
      *
-     * @param {*} H = hue
-     * @param {*} S = saturation
-     * @param {*} L = lightness
-     * @param {*} A = alpha
+     * @param {number} H = hue
+     * @param {number} S = saturation
+     * @param {number} L = lightness
+     * @param {number} A = alpha
      */
     _updateBackground: function(H, S, L, A) {
       return "hsla(" + H + ", " + S + "%, " + L + "%, " + A + ")";
@@ -168,46 +162,49 @@ var app = new Vue({
 
     /**
      *
-     * @param {*} H = hue
-     * @param {*} S = saturation
-     * @param {*} L = lightness
-     * @param {*} A = alpha
+     * @param {number} H = hue
+     * @param {number} S = saturation
+     * @param {number} L = lightness
+     * @param {number} A = alpha
      */
     _displayPrimary: function(H, S, L, A) {
-      let primary = document.querySelector('.primary');
+      let bloc = document.querySelector('.primary');
+      let details = document.querySelector('.primary .color__details');
 
-      primary.style.background = this._updateBackground(H, S, L, A);
-      primary.innerHTML = this._updateColors('primary', H, S, L, A);
+      bloc.style.background = this._updateBackground(H, S, L, A);
+      details.innerHTML = this._updateColors(H, S, L, A);
     },
 
     /**
      *
-     * @param {*} H = hue
-     * @param {*} S = saturation
-     * @param {*} L = lightness
-     * @param {*} A = alpha
+     * @param {function} H = hue
+     * @param {number} S = saturation
+     * @param {number} L = lightness
+     * @param {number} A = alpha
      */
     _displayComplementary: function(H, S, L, A) {
       H = H + 180 - 360;
-      let complementary = document.querySelector('.complementary');
+      let bloc = document.querySelector('.complementary');
+      let details = document.querySelector('.complementary .color__details');
 
-      complementary.style.background = this._updateBackground(this._calcComplementary(H), S, L, A);
-      complementary.innerHTML = this._updateColors('complementary', this._calcComplementary(H), S, L, A);
+      bloc.style.background = this._updateBackground(this._calcComplementary(H), S, L, A);
+      details.innerHTML = this._updateColors(this._calcComplementary(H), S, L, A);
     },
 
     /**
      *
-     * @param {*} H = hue
-     * @param {*} S = saturation
-     * @param {*} L = lightness
-     * @param {*} A = alpha
+     * @param {function} H = hue
+     * @param {number} S = saturation
+     * @param {number} L = lightness
+     * @param {number} A = alpha
      */
     _displayTriadic: function(H, S, L, A) {
       H = H + 120 - 360;
-      let triadic = document.querySelector('.triadic');
+      let bloc = document.querySelector('.triadic');
+      let details = document.querySelector('.triadic .color__details');
 
-      triadic.style.background = this._updateBackground(this._calcTriadic(H), S, L, A);
-      triadic.innerHTML = this._updateColors('triadic', this._calcTriadic(H), S, L, A);
+      bloc.style.background = this._updateBackground(this._calcTriadic(H), S, L, A);
+      details.innerHTML = this._updateColors(this._calcTriadic(H), S, L, A);
     },
   }
 });
