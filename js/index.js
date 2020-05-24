@@ -69,7 +69,7 @@ var hslaPlayground = {
    */
   _createDisplay: function(N, H, S, L, A) {
 
-    return "<div class='result_primary'>" +
+    return "<div class='result_content'>" +
       "<div class='color_title'><strong>" + N + "</strong></div>" +
         "<div class='color_result'>" +
           "<div class='color_result_item h'>" +
