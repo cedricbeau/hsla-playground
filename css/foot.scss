@@ -4,14 +4,12 @@ $footer-color: #aaa;
 $footer-link-color-hover: #03A9F4;
 
 footer {
+  display: flex;
+  justify-content: space-between;
   padding: 1em;
   font-size:.875em;
   text-align: center;
   color: $footer-color;
-
-  div + div {
-    margin-top: 1em;
-  }
 
   a {
     color: $footer-color;
@@ -26,15 +24,5 @@ footer {
   [class*="icon-"] {
     display: inline-block;
     vertical-align: middle;
-  } 
-}
-
-@media only screen and (min-width: 768px) {
-  footer {
-    display: flex;
-    justify-content: space-between;
-    div + div {
-      margin-top: 0;
-    }
   }
 }
